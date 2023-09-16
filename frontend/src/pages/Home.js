@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Footer from "../components/Footer";
 import "./Home.css";
+import { Link } from "react-router-dom";
 //import railwayVideo2 from "./assets/railwayVideo2.mp4";
 
 function Home() {
@@ -26,27 +27,11 @@ function Home() {
               >
                 <div className="font-light text-gray-500 sm:text-lg dark:text-gray-200 text-center text-justify">
                   <h2 className="mb-4 text-l tracking-tight font-extrabold text-gray-900 dark:text-white">
-                    VJTI Railway Concession Portal: Your Hassle-Free Travel
-                    Solution!
+                   Let's Test Your Mental Health!
                   </h2>
-                  {/* <h3 className="mb-2 text-3xl tracking-tight font-bold text-gray-900 dark:text-white">
-                    Your Hassle-Free Travel Solution!
-                  </h3> */}
-                  <p className="mb-4 text-m">
-                    Welcome to the VJTI Railway Concession Portal, where
-                    convenience meets efficiency.
-                  </p>
-                  <p className="mb-4 text-m">
-                    Skip the queues and paperwork with our user-friendly
-                    platform designed exclusively for VJTI students. Enjoy easy
-                    access to railway concessions and updates, making your
-                    commute smoother than ever. Embrace the future of
-                    hassle-free travel!
-                  </p>
-
-                  <p className="mb-4 text-m">
-                    30% Concession is given by College.
-                  </p>
+                  <Link to="/quiz"> 
+        <button>Start Test</button>
+      </Link>
                 </div>
               </div>
             </div>

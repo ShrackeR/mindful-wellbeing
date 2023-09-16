@@ -6,6 +6,8 @@ import Navbar from './components/Navigation'
 import Login from '../src/components/Login'
 import SignUp from './components/Signup'
 import Api from './pages/Api'
+import Quiz from './pages/Quiz'
+import Profile from './pages/Profile'
 
 function App() {
 
@@ -30,6 +32,14 @@ function App() {
             <Route 
               path="/api" 
               element={<Api />} 
+            />
+            <Route 
+              path="/quiz" 
+              element={<Quiz/>} 
+            />
+              <Route 
+              path="/profile" 
+              element={<Profile/>} 
             />
           </Routes>
         </div>
