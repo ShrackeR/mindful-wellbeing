@@ -5,6 +5,7 @@ import Home from './pages/Home'
 import Navbar from './components/Navigation'
 import Login from '../src/components/Login'
 import SignUp from './components/Signup'
+import Api from './pages/Api'
 
 function App() {
 
@@ -25,6 +26,10 @@ function App() {
             <Route 
               path="/signup" 
               element={<SignUp />} 
+            />
+            <Route 
+              path="/api" 
+              element={<Api />} 
             />
           </Routes>
         </div>
