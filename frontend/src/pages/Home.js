@@ -50,7 +50,7 @@ function Home() {
 
             <div className="rectangle1 bg-transparent">
               <div
-                className="py-8 px-8 mx-auto max-w-screen-xl bg-transparent"
+                className="py-8 px-8 mx-auto max-w-screen-xl bg-transparent border-white border-2"
                 // style={{ backgroundColor: "black", opacity: 1 }}
               >
                 <div className="font-light text-blue-500 sm:text-lg dark:text-blue-200 justify-center items-center text-center text-justify bg-transparent">

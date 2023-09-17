@@ -2,7 +2,7 @@
 @tailwind components;
 
 .bg-pic {
-    background-image: url("../assets/home.jpg");
+    background-image: url("../assets/home5.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     opacity: 0.7;
