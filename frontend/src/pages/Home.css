@@ -16,11 +16,9 @@
     opacity: 0.7;
 } */
 
-.bg-vid {
-    position: relative;
-}
 
-.fullscreen-video {
+
+.fullscreen{
     position: absolute;
     top: 0;
     left: 0;

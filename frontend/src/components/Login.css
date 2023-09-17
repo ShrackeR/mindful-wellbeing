@@ -1,10 +1,12 @@
 @tailwind base;
 @tailwind components;
-.bgimage
-{
-    /* background-image: url("C:\Coding\Web Development\COC\railway-concession\public\image\loginImage.png"); */
+
+.bg-pic {
+    background-image: url("../assets/home.jpg");
     background-repeat: no-repeat;
-    background-size:cover;
-    opacity: 0.9;
+    background-size: cover;
+    opacity: 0.7;
 }
+
+
 @tailwind utilities;
