@@ -1,6 +1,4 @@
-import React from "react";
-import "./SignUp.css";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Navigation from "./Navigation.js";
 import Footer from "./Footer.js";
@@ -8,10 +6,11 @@ import Footer from "./Footer.js";
 function SignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [confirmpassword, setConfirmPassword] = useState("");
-  const [name, setFirstName] = useState("");
-  const [age, setage] = useState("");
-  const [phnNumber, setphnNumber] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [name, setName] = useState("");
+  const [age, setAge] = useState("");
+  const [gender, setGender] = useState("");
+  const [state, setState] = useState("");
   const [error, setError] = useState(false);
   const [latestError, setLatestError] = useState("");
   const [message, setMessage] = useState("");
@@ -25,6 +24,36 @@ function SignUp() {
     }, 100);
   }, []);
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const workout = { name, email, age, gender, state, password, confirmPassword };
+
+    const response = await fetch('/api/workouts', {
+      method: 'POST',
+      body: JSON.stringify(workout),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+    const json = await response.json();
+
+    if (!response.ok) {
+      setError(json.error);
+    }
+    if (response.ok) {
+      setError(null);
+      setName('');
+      setAge('');
+      setEmail('');
+      setPassword('');
+      setConfirmPassword('');
+      setState('');
+      setGender('');
+      console.log('new workout added:', json);
+    }
+  };
+
   return (
     <>
       <Navigation />
@@ -37,25 +66,28 @@ function SignUp() {
           <h1 className="text-4xl text-black font-bold mb-6 text-center align-center">
             Sign Up
           </h1>
-          <form className="space-y-6">
+          <form className="space-y-6" onSubmit={handleSubmit}>
+            {/* Name */}
             <div className="space-y-1">
               <label
-                htmlFor="firstName"
+                htmlFor="name"
                 className="text-lg text-purple-violent font-semibold"
               >
                 Name:
               </label>
               <input
                 type="text"
-                id="firstName"
-                name="firstName"
+                id="name"
+                name="name"
                 value={name}
+                onChange={(e) => setName(e.target.value)}
                 className="w-full px-4 py-2 rounded-full border border-gray-300 focus:ring focus:ring-purple-500 focus:ring-opacity-50 focus:border-purple-500"
-                placeholder="Enter your first name"
+                placeholder="Enter your name"
                 required
               />
             </div>
 
+            {/* Email */}
             <div className="space-y-1">
               <label
                 htmlFor="email"
@@ -68,13 +100,75 @@ function SignUp() {
                 id="email"
                 name="email"
                 value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 className="w-full px-4 py-2 rounded-full border border-gray-300 focus:ring focus:ring-purple-500 focus:ring-opacity-50 focus:border-purple-500"
                 placeholder="Enter your email"
                 required
               />
             </div>
 
+            {/* Age */}
             <div className="space-y-1">
+              <label
+                htmlFor="age"
+                className="text-lg text-purple-violent font-semibold"
+              >
+                Age:
+              </label>
+              <input
+                type="text"
+                id="age"
+                name="age"
+                value={age}
+                onChange={(e) => setAge(e.target.value)}
+                className="w-full px-4 py-2 rounded-full border border-gray-300 focus:ring focus:ring-purple-500 focus:ring-opacity-50 focus:border-purple-500"
+                placeholder="Enter your age"
+                required
+              />
+            </div>
+
+            {/* Gender */}
+            <div className="space-y-1">
+              <label
+                htmlFor="gender"
+                className="text-lg text-purple-violent font-semibold"
+              >
+                Gender:
+              </label>
+              <input
+                type="text"
+                id="gender"
+                name="gender"
+                value={gender}
+                onChange={(e) => setGender(e.target.value)}
+                className="w-full px-4 py-2 rounded-full border border-gray-300 focus:ring focus:ring-purple-500 focus:ring-opacity-50 focus:border-purple-500"
+                placeholder="Enter your gender"
+                required
+              />
+            </div>
+
+            {/* State */}
+            <div className="space-y-1">
+              <label
+                htmlFor="state"
+                className="text-lg text-purple-violent font-semibold"
+              >
+                State:
+              </label>
+              <input
+                type="text"
+                id="state"
+                name="state"
+                value={state}
+                onChange={(e) => setState(e.target.value)}
+                className="w-full px-4 py-2 rounded-full border border-gray-300 focus:ring focus:ring-purple-500 focus:ring-opacity-50 focus:border-purple-500"
+                placeholder="Enter your state"
+                required
+              />
+            </div>
+
+             {/* Password */}
+             <div className="space-y-1">
               <label
                 htmlFor="password"
                 className="text-lg text-purple-violent font-semibold"
@@ -86,12 +180,14 @@ function SignUp() {
                 id="password"
                 name="password"
                 value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 className="w-full px-4 py-2 rounded-full border border-gray-300 focus:ring focus:ring-purple-500 focus:ring-opacity-50 focus:border-purple-500"
                 placeholder="Enter your password"
                 required
               />
             </div>
 
+            {/* Confirm Password */}
             <div className="space-y-1">
               <label
                 htmlFor="confirmPassword"
@@ -103,13 +199,15 @@ function SignUp() {
                 type="password"
                 id="confirmPassword"
                 name="confirmPassword"
-                value={confirmpassword}
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
                 className="w-full px-4 py-2 rounded-full border border-gray-300 focus:ring focus:ring-purple-500 focus:ring-opacity-50 focus:border-purple-500"
                 placeholder="Confirm your password"
                 required
               />
             </div>
 
+            {/* Submit Button */}
             <button
               type="submit"
               className="w-full bg-pink-violent text-white font-semibold py-2 rounded-full hover:bg-purple-700 focus:outline-none focus:ring focus:ring-purple-500 focus:ring-opacity-50"

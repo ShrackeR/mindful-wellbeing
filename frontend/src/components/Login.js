@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import "./Login.css";
 import { Link } from "react-router-dom";
 import Navigation from "./Navigation.js";
 import Footer from "./Footer.js";
@@ -8,7 +7,7 @@ function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(false);
-  const [loading, setLoading] = useState(false);
+
   const [isPageLoaded, setPageLoaded] = useState(false);
 
   useEffect(() => {
@@ -17,6 +16,31 @@ function Login() {
       setPageLoaded(true);
     }, 100);
   }, []);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const workout = { email, password};
+
+    const response = await fetch('/api/workouts', {
+      method: 'POST',
+      body: JSON.stringify(workout),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+    const json = await response.json();
+
+    if (!response.ok) {
+      setError(json.error);
+    }
+    if (response.ok) {
+      setEmail('');
+      setPassword('');
+
+      console.log('new workout added:', json);
+    }
+  };
 
   return (
     <div>
