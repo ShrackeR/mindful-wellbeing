@@ -14,22 +14,22 @@ function Navigation() {
         </Link>
         <>
           <Link
-            to="/ApplicationForm"
+            to="/quiz"
             className="text-black font-semibold hover:dark:bg-gray-900 hover:text-white rounded-lg px-4 py-2 animate-fadein"
           >
-            Application Form
+            Test
           </Link>
           <Link
-            to="/ApplicationFormEdit"
+            to="/api"
             className="text-black font-semibold hover:dark:bg-gray-900 hover:text-white rounded-lg px-4 py-2 animate-fadein"
           >
-            Edit Form
+            Exercise
           </Link>
           <Link
-            to="/renewal"
+            to="/remedies"
             className="text-black font-semibold hover:dark:bg-gray-900 hover:text-white rounded-lg px-4 py-2 animate-fadein"
           >
-            Renew Application
+            Remedies
           </Link>
           <button className="text-black font-semibold hover:dark:bg-gray-900 hover:text-white rounded-lg px-4 py-2 animate-fadein">
             Logout
