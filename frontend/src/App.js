@@ -16,6 +16,7 @@ import PhobicAnxietyRemediesPage from "./remedies/Phobic";
 import ParanoidIdeationRemediesPage from "./remedies/Paranoid";
 import InterpersonalSensitivityRemediesPage from "./remedies/Inter";
 import PsychoticismRemediesPage from "./remedies/Psycho";
+import Remedies from "./pages/Remedies";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           <Route path="/api" element={<Api />} />
           <Route path="/quiz" element={<Quiz />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/remedies" element={<Remedies />} />
           <Route path="/depression" element={<DepressionRemediesPage />} />
           <Route path="/anxiety" element={<AnxietyRemediesPage />} />
           <Route path="/stress" element={<StressRemediesPage />} />
