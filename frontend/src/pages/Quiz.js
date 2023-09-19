@@ -339,7 +339,7 @@ const Quiz = () => {
   };
 
   const [userResponses, setUserResponses] = useState(
-    Array(quiz.questions.length).fill(1)
+    Array(quiz.questions.length).fill(0)
   );
   const [activeQuestion, setActiveQuestion] = useState(0);
   const [showResult, setShowResult] = useState(false);
