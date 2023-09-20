@@ -1,47 +1,154 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState, useRef } from "react";
+import { Chart } from "chart.js/auto";
 
 const Profile = () => {
-  const [fullName, setFullName] = useState('Dev');
-  const [email, setEmail] = useState('dev@example.com');
-  const [registrationId, setRegistrationId] = useState('12345');
-  const [phoneNumber, setPhoneNumber] = useState('555-555-5555');
-  const [profileIcon, setProfileIcon] = useState('default-profile.jpg'); // Set a default image URL
+  // Hardcoded data for multiple Line Charts
+  const chartDataArray = [
+    {
+      label: "Stress",
+      data: [85, 72, 91, 78, 89, 95, 88, 92, 79, 84, 90],
+      fill: "origin",
+      backgroundColor: "rgba(255, 99, 132, 0.2)",
+      borderColor: "rgba(255, 99, 132, 1)",
+      borderWidth: 3,
+    },
+    {
+      label: "Anxiety",
+      data: [75, 23, 100, 7, 81, 95, 88, 92, 79, 84, 90],
+      fill: "origin",
+      backgroundColor: "rgba(255, 99, 132, 0.2)",
+      borderColor: "rgba(255, 99, 132, 1)",
+      borderWidth: 3,
+    },
+    {
+      label: "OCD",
+      data: [2, 24, 90, 7, 35, 56, 88, 92, 79, 84, 90],
+      fill: "origin",
+      backgroundColor: "rgba(255, 99, 132, 0.2)",
+      borderColor: "rgba(255, 99, 132, 1)",
+      borderWidth: 3,
+    },
+    {
+      label: "Depression",
+      data: [85, 72, 91, 78, 89, 95, 88, 92, 79, 84, 90],
+      fill: "origin",
+      backgroundColor: "rgba(255, 99, 132, 0.2)",
+      borderColor: "rgba(255, 99, 132, 1)",
+      borderWidth: 3,
+    },
+    {
+      label: "Phobic Anxiety",
+      data: [85, 72, 91, 78, 89, 95, 88, 92, 79, 84, 90],
+      fill: "origin",
+      backgroundColor: "rgba(255, 99, 132, 0.2)",
+      borderColor: "rgba(255, 99, 132, 1)",
+      borderWidth: 3,
+    },
+    {
+      label: "Paranoid Ideation",
+      data: [85, 72, 91, 78, 89, 95, 88, 92, 79, 84, 90],
+      fill: "origin",
+      backgroundColor: "rgba(255, 99, 132, 0.2)",
+      borderColor: "rgba(255, 99, 132, 1)",
+      borderWidth: 3,
+    },
+    {
+      label: "Interpersonal Sensitivity",
+      data: [85, 72, 91, 78, 89, 95, 88, 92, 79, 84, 90],
+      fill: "origin",
+      backgroundColor: "rgba(255, 99, 132, 0.2)",
+      borderColor: "rgba(255, 99, 132, 1)",
+      borderWidth: 3,
+    },
+    {
+      label: "Psychoticism",
+      data: [85, 72, 91, 78, 89, 95, 88, 92, 79, 84, 90],
+      fill: "origin",
+      backgroundColor: "rgba(255, 99, 132, 0.2)",
+      borderColor: "rgba(255, 99, 132, 1)",
+      borderWidth: 3,
+    },
+    // Add more datasets here for additional charts
+  ];
 
-  const handleImageChange = (e) => {
-    const file = e.target.files[0];
-    setProfileIcon(URL.createObjectURL(file)); // Store the URL of the selected image
+  const options = {
+    maintainAspectRatio: false,
+    scales: {
+      y: {
+        beginAtZero: true,
+        max: 100, // Adjust the maximum y-axis value as needed
+      },
+    },
+    legend: {
+      display: false, // Hide legend
+    },
   };
 
-  const saveProfile = () => {
-    // Handle saving the user's profile data, e.g., send data to the server
-    // You can access the values from the state variables (fullName, email, etc.)
-    // You may also want to handle the profile icon separately
-  };
+  const [activeTab, setActiveTab] = useState(0); // Initialize with the first tab
+
+  // Use a ref to keep track of the chart instance
+  const chartRef = useRef(null);
+
+  useEffect(() => {
+    // Initialize the chart when the component mounts or when activeTab changes
+    if (chartRef.current) {
+      const ctx = chartRef.current.getContext("2d");
+
+      // Destroy the previous chart if it exists
+      if (ctx.chart) {
+        ctx.chart.destroy();
+      }
+
+      // Create a new chart based on the selected activeTab
+      ctx.chart = new Chart(ctx, {
+        type: "line",
+        data: {
+          labels: [
+            "Jan",
+            "Feb",
+            "Mar",
+            "Apr",
+            "May",
+            "June",
+            "July",
+            "Aug",
+            "Sept",
+            "Oct",
+            "Nov",
+            "Dec",
+          ],
+          datasets: [chartDataArray[activeTab]], // Use the selected dataset
+        },
+        options: options,
+      });
+    }
+  }, [activeTab]);
 
   return (
-    <div className="profile-container">
-      <h2>User Profile</h2>
-      <div className="profile-details">
-        <div className="form-group">
-          <label htmlFor="fullName">Full Name:</label>
-          <span>{fullName}</span>
-        </div>
-        <div className="form-group">
-          <label htmlFor="email">Email ID:</label>
-          <span>{email}</span>
-        </div>
-        <div className="form-group">
-          <label htmlFor="registrationId">Registration ID:</label>
-          <span>{registrationId}</span>
-        </div>
-        <div className="form-group">
-          <label htmlFor="phoneNumber">Phone Number:</label>
-          <span>{phoneNumber}</span>
-        </div>
+    <div className="container mx-auto mt-6">
+      <div className="chart mb-6">
+        <canvas ref={chartRef} width={800} height={400}></canvas>
       </div>
+      {/* Tabs to switch between charts */}
+      <div className="flex justify-center mt-4 space-x-4">
+        {chartDataArray.map((chartData, index) => (
+          <button
+            key={index}
+            className={`py-2 px-4 rounded-md mt-4 ${
+              activeTab === index
+                ? "bg-blue-300 text-blue-1000"
+                : "bg-blue-100 text-blue-1000 hover:bg-blue-200 hover:text-blue-800"
+            }`}
+            onClick={() => setActiveTab(index)}
+          >
+            {chartData.label}
+          </button>
+        ))}
       </div>
-     
+    </div>
   );
+  
+  
 };
 
 export default Profile;

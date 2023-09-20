@@ -17,6 +17,8 @@ import ParanoidIdeationRemediesPage from "./remedies/Paranoid";
 import InterpersonalSensitivityRemediesPage from "./remedies/Inter";
 import PsychoticismRemediesPage from "./remedies/Psycho";
 import Remedies from "./pages/Remedies";
+import LineGraph from "./pages/Profile";
+import State from "./pages/State";
 
 function App() {
   return (
@@ -37,11 +39,13 @@ function App() {
           <Route path="/ocd" element={<OCDRemediesPage />} />
           <Route path="/phobic" element={<PhobicAnxietyRemediesPage />} />
           <Route path="/paranoid" element={<ParanoidIdeationRemediesPage />} />
+          <Route path="/state" element={<State />} />
           <Route
             path="/inter"
             element={<InterpersonalSensitivityRemediesPage />}
           />
           <Route path="/psycho" element={<PsychoticismRemediesPage />} />
+          <Route path="/" element={<PsychoticismRemediesPage />} />
         </Routes>
         {/* </div> */}
       </BrowserRouter>
