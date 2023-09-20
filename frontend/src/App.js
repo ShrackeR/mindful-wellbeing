@@ -19,6 +19,7 @@ import PsychoticismRemediesPage from "./remedies/Psycho";
 import Remedies from "./pages/Remedies";
 import LineGraph from "./pages/Profile";
 import State from "./pages/State";
+import MapCharts from "./pages/MapCharts";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
           <Route path="/api" element={<Api />} />
           <Route path="/quiz" element={<Quiz />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/india" element={<MapCharts />} />
           <Route path="/remedies" element={<Remedies />} />
           <Route path="/depression" element={<DepressionRemediesPage />} />
           <Route path="/anxiety" element={<AnxietyRemediesPage />} />
