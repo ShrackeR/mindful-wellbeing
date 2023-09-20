@@ -32,16 +32,16 @@ function MentalHealthCards() {
   ];
 
   return (
-    <section className="bg-gray-100 flex items-center justify-center h-screen bg-blue-200">
+    <section className="bg-blue-50 flex items-center justify-center h-screen bg-blue-200">
       <div className="container mx-auto text-center bg-blue-300">
-        <h2 className="text-3xl font-extrabold text-gray-800 mb-8 mx-auto">
+        <h2 className="text-3xl font-extrabold text-gray-800 mb-8 mx-auto bg-blue-300">
           Importance of Mental Health
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 bg-white">
           {mentalHealthTopics.map((topic, index) => (
             <div
               key={index}
-              className="bg-white shadow-lg rounded-lg p-6 hover:shadow-xl transition-transform duration-300 transform hover:scale-105"
+              className="bg-blue-300 shadow-lg rounded-lg p-6 hover:shadow-xl transition-transform duration-300 transform hover:scale-105"
             >
               <img
                 src={topic.imageSrc}

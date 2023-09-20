@@ -4,7 +4,7 @@ import "./Navigation.css";
 
 function Navigation() {
   return (
-    <div className="dark:bg-blue-100">
+    <div className="bg-blue-400">
       <nav className="flex flex-row items-center h-16 px-4">
         <Link
           to="/"

@@ -1,7 +1,7 @@
 import { useState } from "react";
 // import "./Quiz.css";
 import Navigation from "../components/Navigation";
-import home from "../assets/home7.jpg";
+import home from "../assets/bg.jpg";
 
 const Quiz = () => {
   const choice = [
