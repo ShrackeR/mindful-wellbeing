@@ -1,0 +1,19 @@
+/* CSS for the curved meter */
+.meter-svg {
+    transform: rotate(-90deg);
+    transform-origin: center;
+}
+
+.meter-circle {
+    stroke-dasharray: 251.3274;
+    /* 2 * Math.PI * radius */
+    stroke-dashoffset: 0;
+    transition: stroke-dashoffset 1s linear;
+}
+
+.meter-progress {
+    stroke-dasharray: 251.3274;
+    /* 2 * Math.PI * radius */
+    stroke-dashoffset: 251.3274;
+    transition: stroke-dashoffset 1s linear;
+}

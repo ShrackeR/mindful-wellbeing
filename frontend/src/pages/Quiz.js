@@ -2,6 +2,7 @@ import { useState } from "react";
 // import "./Quiz.css";
 import Navigation from "../components/Navigation";
 import home from "../assets/bg.jpg";
+import { Link } from "react-router-dom";
 
 const Quiz = () => {
   const choice = [
@@ -444,17 +445,18 @@ const Quiz = () => {
               <div className="result text-blue-800">
                 <h3 className="text-2xl font-semibold">Result</h3>
                 <p className="text-lg">
-                  Total Question:{" "}
-                  <span className="font-semibold">{questions.length}</span>
+                  Test Completed!{" "}
+                  {/* <span className="font-semibold">{questions.length}</span> */}
                 </p>
-                <p className="text-lg">
-                  User Responses:{" "}
+                {/* <p className="text-lg">
+                  View Your Results:{" "}
                   <span className="font-semibold">
                     {userResponses.join(", ")}
                   </span>
-                </p>
+                </p> */}
+                <br />
                 {/* Display the POST response here */}
-                {postResponse && (
+                {/* {postResponse && (
                   <div>
                     <p className="text-lg">
                       POST Response:{" "}
@@ -463,7 +465,10 @@ const Quiz = () => {
                       </span>
                     </p>
                   </div>
-                )}
+                )} */}
+                <Link to="/result" className="text-blue-500 hover:underline">
+                  View Your Results
+                </Link>
               </div>
             )}
           </div>

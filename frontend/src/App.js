@@ -20,6 +20,7 @@ import Remedies from "./pages/Remedies";
 import LineGraph from "./pages/Profile";
 import State from "./pages/State";
 import MapCharts from "./pages/MapCharts";
+import Result1 from "./components/Result1";
 
 function App() {
   return (
@@ -48,6 +49,7 @@ function App() {
           />
           <Route path="/psycho" element={<PsychoticismRemediesPage />} />
           <Route path="/" element={<PsychoticismRemediesPage />} />
+          <Route path="/result" element={<Result1 />} />
         </Routes>
         {/* </div> */}
       </BrowserRouter>
