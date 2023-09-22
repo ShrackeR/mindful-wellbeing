@@ -6,18 +6,8 @@ function Navigation() {
   // Check if "temp" is present in localStorage
   const isTempInLocalStorage = localStorage.getItem("temp");
 
-  // Function to handle the Logout button click
-  const handleLogoutClick = () => {
-    // Remove the "temp" key from localStorage
-    localStorage.removeItem("temp");
-
-    // You can also add any additional logout logic here if needed
-    // For example, redirect the user to the login page
-    // window.location.href = "/Login";
-  };
-
   return (
-    <div className="dark:bg-blue-100">
+    <div className="bg-blue-400">
       <nav className="flex flex-row items-center h-16 px-4">
         <Link
           to="/"
@@ -38,7 +28,7 @@ function Navigation() {
           Remedies
         </Link>
         <Link
-          to="/india"
+          to="/MapCharts"
           className="text-black font-semibold hover:dark:bg-gray-900 hover:text-white rounded-lg px-4 py-2 animate-fadein"
         >
           Analysis
@@ -54,7 +44,6 @@ function Navigation() {
               My Profile
             </Link>
             <Link
-              onClick={handleLogoutClick} // Add the click event handler here
               to="/"
               className="text-black font-semibold hover:dark:bg-gray-900 hover:text-white rounded-lg px-4 py-2 animate-fadein"
             >

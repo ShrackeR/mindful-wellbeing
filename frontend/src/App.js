@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 // pages & components
 import Home from "./pages/Home";
 import Navbar from "./components/Navigation";
-import Login from "../src/components/Login";
+import Login1 from "../src/components/Login1";
 import SignUp from "./components/Signup";
 import Api from "./pages/Api";
 import Quiz from "./pages/Quiz";
@@ -25,7 +25,7 @@ function App() {
         {/* <div className="pages"> */}
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/login" element={<Login1 />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/api" element={<Api />} />
           <Route path="/quiz" element={<Quiz />} />
