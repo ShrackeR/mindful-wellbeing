@@ -17,27 +17,17 @@ function Login() {
     }, 100);
   }, []);
 
-  // Function to add a temporary value to local storage
-  const addTempValueToLocalStorage = () => {
-    localStorage.setItem("temp", "temp");
-  };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const workout = { email, password };
+    const workout = { email, password};
 
-<<<<<<< Updated upstream
     const response = await fetch('/api/workouts', {
       method: 'POST',
-=======
-    const response = await fetch("/login", {
-      method: "POST",
->>>>>>> Stashed changes
       body: JSON.stringify(workout),
       headers: {
-        "Content-Type": "application/json",
-      },
+        'Content-Type': 'application/json'
+      }
     });
     const json = await response.json();
 
@@ -45,10 +35,10 @@ function Login() {
       setError(json.error);
     }
     if (response.ok) {
-      setEmail("");
-      setPassword("");
+      setEmail('');
+      setPassword('');
 
-      console.log("new workout added:", json);
+      console.log('new workout added:', json);
     }
   };
 
@@ -79,6 +69,7 @@ function Login() {
                 value={email}
                 className="w-full px-4 py-2 rounded-full border border-gray-300 focus:ring focus:ring-purple-500 focus:ring-opacity-50 focus:border-purple-500"
                 placeholder="Enter your email"
+                required
               />
             </div>
 
@@ -94,15 +85,15 @@ function Login() {
                 id="password"
                 name="password"
                 value={password}
-                className="w-full px-4 py-2 text-black rounded-full border border-gray-300 focus:ring focus:ring-purple-500 focus:ring-opacity-50 focus:border-purple-500"
+                className="w-full px-4 py-2 rounded-full border border-gray-300 focus:ring focus:ring-purple-500 focus:ring-opacity-50 focus:border-purple-500"
                 placeholder="Enter your password"
+                required
               />
             </div>
 
             <button
               type="submit"
-              onClick={addTempValueToLocalStorage()}
-              className="w-full bg-pink-violent text-black font-semibold py-2 rounded-full hover:bg-purple-700 focus:outline-none focus:ring focus:ring-purple-500 focus:ring-opacity-50"
+              className="w-full bg-pink-violent text-white font-semibold py-2 rounded-full hover:bg-purple-700 focus:outline-none focus:ring focus:ring-purple-500 focus:ring-opacity-50"
             >
               Submit
             </button>

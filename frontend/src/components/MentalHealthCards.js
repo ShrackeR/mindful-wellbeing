@@ -1,7 +1,7 @@
 import React from "react";
 import stress from "../assets/stress.jpg";
 import emotion from "../assets/emotion.jpeg";
-import self from "../assets/self.webp";
+import self from "../assets/self.avif";
 import reln from "../assets/reln.jpg";
 function MentalHealthCards() {
   const mentalHealthTopics = [

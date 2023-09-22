@@ -1,6 +1,5 @@
 import React from "react";
 import Navigation from "../components/Navigation";
-import { Link } from "react-router-dom";
 
 function AnxietyRemediesPage() {
   return (
@@ -70,9 +69,6 @@ function AnxietyRemediesPage() {
                 stress. Aim for at least 30 minutes of exercise each day to
                 boost your mood and improve overall mental health.
               </p>
-              <Link to="/api" className="text-blue-500 hover:underline">
-                Click for Exercises
-              </Link>
             </div>
           </section>
 

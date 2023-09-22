@@ -6,6 +6,9 @@ function OCDRemediesPage() {
     <>
       <Navigation />
       <div className="bg-gray-100 min-h-screen">
+        <header className="bg-blue-500 p-4 text-white">
+          <h1 className="text-3xl font-semibold">OCD Remedies</h1>
+        </header>
         <main className="container mx-auto p-4 mb-4 mt-4">
           <section className="mb-8">
             <div className="bg-blue-500 p-4 text-white p-6 rounded-lg shadow-lg flex justify-center items-center">

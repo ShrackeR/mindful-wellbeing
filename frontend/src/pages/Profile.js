@@ -1,10 +1,4 @@
-<<<<<<< Updated upstream
 import React, { useState } from 'react';
-=======
-import React, { useEffect, useState, useRef } from "react";
-import { Chart } from "chart.js/auto";
-import Navigation from "../components/Navigation";
->>>>>>> Stashed changes
 
 const Profile = () => {
   const [fullName, setFullName] = useState('Dev');
@@ -25,7 +19,6 @@ const Profile = () => {
   };
 
   return (
-<<<<<<< Updated upstream
     <div className="profile-container">
       <h2>User Profile</h2>
       <div className="profile-details">
@@ -48,32 +41,6 @@ const Profile = () => {
       </div>
       </div>
      
-=======
-    <>
-      <Navigation />
-      <div className="container mx-auto mt-6">
-        <div className="chart mb-6">
-          <canvas ref={chartRef} width={800} height={400}></canvas>
-        </div>
-        {/* Tabs to switch between charts */}
-        <div className="flex justify-center mt-4 space-x-4">
-          {chartDataArray.map((chartData, index) => (
-            <button
-              key={index}
-              className={`py-2 px-4 rounded-md mt-4 ${
-                activeTab === index
-                  ? "bg-blue-300 text-blue-1000"
-                  : "bg-blue-100 text-blue-1000 hover:bg-blue-200 hover:text-blue-800"
-              }`}
-              onClick={() => setActiveTab(index)}
-            >
-              {chartData.label}
-            </button>
-          ))}
-        </div>
-      </div>
-    </>
->>>>>>> Stashed changes
   );
 };
 

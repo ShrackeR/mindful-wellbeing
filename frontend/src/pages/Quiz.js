@@ -412,7 +412,7 @@ const Quiz = () => {
                   </span>
                 </div>
                 <h2 className="text-xl text-blue-800 font-semibold mb-4">
-                  {question} (Default - Not at all)
+                  {question}
                 </h2>
                 <ul>
                   {choices.map((answer, index) => (
