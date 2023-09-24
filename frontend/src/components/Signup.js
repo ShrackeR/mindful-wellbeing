@@ -27,30 +27,24 @@ function SignUp() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    const workout = {
-      name,
-      email,
-      age,
-      gender,
-      state,
-      password,
-      confirmPassword,
-    };
-
-    const response = await fetch("/api/workouts", {
+  
+    const formData = new FormData();
+    formData.append("name", name);
+    formData.append("email", email);
+    formData.append("age", age);
+    formData.append("gender", gender);
+    formData.append("state", state);
+    formData.append("passwd", password);
+  
+    const response = await fetch("https://sih.shreeraj.me/register", {
+      mode: 'no-cors',
       method: "POST",
-      body: JSON.stringify(workout),
-      headers: {
-        "Content-Type": "application/json",
-      },
+      body: formData,
     });
-    const json = await response.json();
-
+  
     if (!response.ok) {
-      setError(json.error);
-    }
-    if (response.ok) {
+      setError("An error occurred during registration.");
+    } else {
       setError(null);
       setName("");
       setAge("");
@@ -59,7 +53,11 @@ function SignUp() {
       setConfirmPassword("");
       setState("");
       setGender("");
-      console.log("new workout added:", json);
+      setMessage("Registration successful!");
+  
+      // Convert the response body to text and log it
+      const responseBody = await response.text();
+      console.log("Response Body:", responseBody);
     }
   };
 

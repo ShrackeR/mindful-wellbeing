@@ -20,29 +20,28 @@ function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    const workout = { email, password };
-
-    const response = await fetch("/login", {
-      method: "POST",
-      body: JSON.stringify(workout),
-      headers: {
-        "Content-Type": "application/json",
-      },
+  
+    const formData = new FormData();
+    formData.append("email", email);
+    formData.append("password", password);
+  
+    const response = await fetch('/login', {
+      mode: 'no-cors',
+      method: 'POST',
+      body: formData,
     });
-    const json = await response.json();
-
+  
     if (!response.ok) {
+      const json = await response.json(); // You can still parse the error response if necessary
       setError(json.error);
-    }
-    if (response.ok) {
-      setEmail("");
-      setPassword("");
-
-      console.log("new workout added:", json);
+    } else {
+      // Reset form fields
+      setEmail('');
+      setPassword('');
+  
+      console.log('Login successful');
     }
   };
-
   return (
     <div>
       <Navigation />
@@ -56,40 +55,40 @@ function Login() {
             Log In
           </h1>
           <form className="space-y-6">
-            <div className="space-y-1">
-              <label
-                htmlFor="email"
-                className="text-lg text-purple-violent font-semibold"
-              >
-                Email ID:
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="w-full px-4 py-2 rounded-full border border-gray-300 focus:ring focus:ring-purple-500 focus:ring-opacity-50 focus:border-purple-500"
-                required
-              />
-            </div>
-            <div className="space-y-1">
-              <label
-                htmlFor="password"
-                className="text-lg text-purple-violent font-semibold"
-              >
-                Password:
-              </label>
-              <input
-                type="password"
-                id="password"
-                name="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                className="w-full px-4 py-2 rounded-full border border-gray-300 focus:ring focus:ring-purple-500 focus:ring-opacity-50 focus:border-purple-500"
-                required
-              />
-            </div>
+          <div className="space-y-1">
+                <label
+                  htmlFor="email"
+                  className="text-lg text-purple-violent font-semibold"
+                >
+                  Email ID:
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="w-full px-4 py-2 rounded-full border border-gray-300 focus:ring focus:ring-purple-500 focus:ring-opacity-50 focus:border-purple-500"
+                  required
+                />
+              </div>
+              <div className="space-y-1">
+                <label
+                  htmlFor="password"
+                  className="text-lg text-purple-violent font-semibold"
+                >
+                  Password:
+                </label>
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className="w-full px-4 py-2 rounded-full border border-gray-300 focus:ring focus:ring-purple-500 focus:ring-opacity-50 focus:border-purple-500"
+                  required
+                />
+              </div>
 
             <button
               type="submit"
