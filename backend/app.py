@@ -5,6 +5,15 @@ from flask_session import Session
 from flask_sqlalchemy import SQLAlchemy
 import datetime
 import os
+from flask import Flask
+from flask_cors import CORS
+
+app = Flask(__name__)
+
+# Configure CORS to allow requests from your React app's domain (http://localhost:3000)
+cors = CORS(app, resources={r"/signup": {"origins": "http://localhost:3000"}})
+
+# ... (other Flask app configurations and routes)
 
 # model = pickle.load(open('model.pkl', 'rb'))
 model2 = pickle.load(open('reg_model.pkl', 'rb'))
@@ -71,7 +80,7 @@ def login():
 
 
 
-@app.route('/register', methods=['POST'])
+@app.route('/signup', methods=['POST'])
 def register():
     try:
         data = request.get_json()

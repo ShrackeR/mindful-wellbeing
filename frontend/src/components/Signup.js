@@ -60,6 +60,8 @@ function SignUp() {
       console.log("Response Body:", responseBody);
     }
   };
+  
+  
 
   return (
     <>
