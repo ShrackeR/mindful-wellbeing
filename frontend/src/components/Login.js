@@ -2,8 +2,10 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Navigation from "./Navigation.js";
 import Footer from "./Footer.js";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(false);
@@ -23,25 +25,35 @@ function Login() {
   
     const formData = new FormData();
     formData.append("email", email);
-    formData.append("password", password);
+    formData.append("passwd", password);
   
-    const response = await fetch('/login', {
-      mode: 'no-cors',
-      method: 'POST',
-      body: formData,
-    });
+    try {
+      const response = await fetch('http://35.154.213.81/login', {
+        mode: 'cors',
+        method: 'POST',
+        body: formData,
+      });
   
-    if (!response.ok) {
-      const json = await response.json(); // You can still parse the error response if necessary
-      setError(json.error);
-    } else {
-      // Reset form fields
-      setEmail('');
-      setPassword('');
+      if (!response.ok) {
+        console.error('Error Response Status:', response.status);
+        setError("An error occurred during login.");
+        return;
+      }
   
-      console.log('Login successful');
+      const jsonResponse = await response.json();
+  
+      if (jsonResponse.success === true) {
+        navigate('/'); // Navigate to the desired location if success is true
+        console.log('Login successful');
+      } else {
+        setError("Login failed. Please check your credentials.");
+        console.log("Wrong")
+      }
+    } catch (error) {
+      console.error('An error occurred:', error);
     }
   };
+  
   return (
     <div>
       <Navigation />
@@ -54,7 +66,7 @@ function Login() {
           <h1 className="text-4xl text-black font-bold mb-6 text-center align-center">
             Log In
           </h1>
-          <form className="space-y-6">
+          <form className="space-y-6"  onSubmit={handleSubmit}>
           <div className="space-y-1">
                 <label
                   htmlFor="email"
