@@ -7,6 +7,7 @@ function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(false);
+  const [state, setState] = useState("");
 
   const [isPageLoaded, setPageLoaded] = useState(false);
 
@@ -20,14 +21,14 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const workout = { email, password};
+    const workout = { email, password };
 
-    const response = await fetch('/login', {
-      method: 'POST',
+    const response = await fetch("/login", {
+      method: "POST",
       body: JSON.stringify(workout),
       headers: {
-        'Content-Type': 'application/json'
-      }
+        "Content-Type": "application/json",
+      },
     });
     const json = await response.json();
 
@@ -35,10 +36,10 @@ function Login() {
       setError(json.error);
     }
     if (response.ok) {
-      setEmail('');
-      setPassword('');
+      setEmail("");
+      setPassword("");
 
-      console.log('new workout added:', json);
+      console.log("new workout added:", json);
     }
   };
 
@@ -67,12 +68,11 @@ function Login() {
                 id="email"
                 name="email"
                 value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 className="w-full px-4 py-2 rounded-full border border-gray-300 focus:ring focus:ring-purple-500 focus:ring-opacity-50 focus:border-purple-500"
-                placeholder="Enter your email"
                 required
               />
             </div>
-
             <div className="space-y-1">
               <label
                 htmlFor="password"
@@ -85,8 +85,8 @@ function Login() {
                 id="password"
                 name="password"
                 value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 className="w-full px-4 py-2 rounded-full border border-gray-300 focus:ring focus:ring-purple-500 focus:ring-opacity-50 focus:border-purple-500"
-                placeholder="Enter your password"
                 required
               />
             </div>
