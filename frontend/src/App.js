@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { UserProvider } from "../src/context/UserContext"; // Import the UserProvider
+
 // pages & components
 import Home from "./pages/Home";
 import Navbar from "./components/Navigation";
@@ -27,37 +27,31 @@ function App() {
     <div className="App">
       <BrowserRouter>
         {/* <div className="pages"> */}
-        <UserProvider>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<SignUp />} />
-            <Route path="/api" element={<Api />} />
-            <Route path="/quiz" element={<Quiz />} />
-            {/* <Route path="/quiz/:userEmail" element={<Quiz />} /> */}
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/india" element={<MapCharts />} />
-            <Route path="/remedies" element={<Remedies />} />
-            <Route path="/depression" element={<DepressionRemediesPage />} />
-            <Route path="/anxiety" element={<AnxietyRemediesPage />} />
-            <Route path="/stress" element={<StressRemediesPage />} />
-            <Route path="/ocd" element={<OCDRemediesPage />} />
-            <Route path="/phobic" element={<PhobicAnxietyRemediesPage />} />
-            <Route
-              path="/paranoid"
-              element={<ParanoidIdeationRemediesPage />}
-            />
-            <Route path="/state" element={<State />} />
-            <Route
-              path="/inter"
-              element={<InterpersonalSensitivityRemediesPage />}
-            />
-            <Route path="/psycho" element={<PsychoticismRemediesPage />} />
-            <Route path="/" element={<PsychoticismRemediesPage />} />
-            <Route path="/result" element={<Result1 />} />
-          </Routes>
-          {/* </div> */}
-        </UserProvider>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/api" element={<Api />} />
+          <Route path="/quiz" element={<Quiz />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/india" element={<MapCharts />} />
+          <Route path="/remedies" element={<Remedies />} />
+          <Route path="/depression" element={<DepressionRemediesPage />} />
+          <Route path="/anxiety" element={<AnxietyRemediesPage />} />
+          <Route path="/stress" element={<StressRemediesPage />} />
+          <Route path="/ocd" element={<OCDRemediesPage />} />
+          <Route path="/phobic" element={<PhobicAnxietyRemediesPage />} />
+          <Route path="/paranoid" element={<ParanoidIdeationRemediesPage />} />
+          <Route path="/state" element={<State />} />
+          <Route
+            path="/inter"
+            element={<InterpersonalSensitivityRemediesPage />}
+          />
+          <Route path="/psycho" element={<PsychoticismRemediesPage />} />
+          <Route path="/" element={<PsychoticismRemediesPage />} />
+          <Route path="/result" element={<Result1 />} />
+        </Routes>
+        {/* </div> */}
       </BrowserRouter>
     </div>
   );
