@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Navigation from "./Navigation.js";
 import Footer from "./Footer.js";
 import "./SignUp.css";
+import { useUser } from "../context/UserContext"; // Import the useUser hook
 
 function SignUp() {
   const [email, setEmail] = useState("");
@@ -27,7 +28,7 @@ function SignUp() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
     const formData = new FormData();
     formData.append("name", name);
     formData.append("email", email);
@@ -35,13 +36,13 @@ function SignUp() {
     formData.append("gender", gender);
     formData.append("state", state);
     formData.append("passwd", password);
-  
+
     const response = await fetch("https://sih.shreeraj.me/register", {
-      mode: 'no-cors',
+      mode: "no-cors",
       method: "POST",
       body: formData,
     });
-  
+
     if (!response.ok) {
       setError("An error occurred during registration.");
     } else {
@@ -54,14 +55,12 @@ function SignUp() {
       setState("");
       setGender("");
       setMessage("Registration successful!");
-  
+
       // Convert the response body to text and log it
       const responseBody = await response.text();
       console.log("Response Body:", responseBody);
     }
   };
-  
-  
 
   return (
     <>

@@ -1,10 +1,13 @@
 import { useState } from "react";
 // import "./Quiz.css";
+import { useUser } from "../context/UserContext.js"; // Import the useUser hook
 import Navigation from "../components/Navigation";
 import home from "../assets/bg.jpg";
 import { Link } from "react-router-dom";
 
 const Quiz = () => {
+  const { userEmail } = useUser();
+  // const { setUserEmail } = useUser(); // Get the userEmail from the context
   const choice = [
     "Not at all",
     "A little bit",
@@ -359,15 +362,29 @@ const Quiz = () => {
       setActiveQuestion(0);
       setShowResult(true);
 
-      // Send a POST request to "/mental" with userResponses
+      // Create a new FormData object
+      const formData = new FormData();
+
+      // Convert the user responses array to a comma-separated string
       const userResponsesString = userResponses.join(",");
-      fetch("/mental", {
+      // console.log(userResponsesString);
+
+      // Append the comma-separated string as a field in the FormData
+      formData.append("mental_report", userResponsesString);
+
+      // Use the userEmail from the context and add it to the FormData
+      formData.append("email", userEmail);
+
+      // Use the get method to retrieve the values
+      console.log(formData.get("email")); // This will log the email
+      console.log(formData.get("mental_report")); // This will log the userResponses
+
+      // Send a POST request to "/mental" with FormData
+      fetch("https://sih.shreeraj.me/mental", {
+        mode: "no-cors",
         method: "POST",
-        body: userResponsesString,
+        body: formData,
       })
-        // .then((response) => {
-        //   // Handle the response as needed
-        // })
         .then((response) => response.json()) // Assuming the response is JSON
         .then((data) => {
           setPostResponse(data); // Store the response data
