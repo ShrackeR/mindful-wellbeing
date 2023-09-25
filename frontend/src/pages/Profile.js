@@ -54,7 +54,7 @@ const Profile = () => {
       borderWidth: 3,
     },
     {
-      label: "Interpersonal Sensitivity",
+      label: "Inter - personal Sensitivity",
       data: [85, 72, 91, 78, 89, 95, 88, 92, 79, 84, 90],
       fill: "origin",
       backgroundColor: "rgba(255, 99, 132, 0.2)",
@@ -62,7 +62,7 @@ const Profile = () => {
       borderWidth: 3,
     },
     {
-      label: "Psychoticism",
+      label: "Psychotic",
       data: [85, 72, 91, 78, 89, 95, 88, 92, 79, 84, 90],
       fill: "origin",
       backgroundColor: "rgba(255, 99, 132, 0.2)",
@@ -125,20 +125,13 @@ const Profile = () => {
     }
   }, [activeTab]);
 
-  // Assuming chartDataArray contains your chart data
-  const rowsOfButtons = [];
-  for (let i = 0; i < chartDataArray.length; i += 4) {
-    const row = chartDataArray.slice(i, i + 4);
-    rowsOfButtons.push(row);
-  }
-
   return (
     <>
       <Navigation />
-      <div className="container mx-auto mt-6">
-        <div className="flex flex-col md:flex-row">
+      <div className="container mx-auto mt-6 ">
+        <div className="flex">
           {/* Profile Section */}
-          <div className="md:w-1/3 text-left mb-4">
+          <div className="w-1/3 text-left">
             <h2 className="text-2xl font-semibold mb-4">Profile</h2>
             <div className="mb-2">
               <strong>Name:</strong> Dev
@@ -157,28 +150,24 @@ const Profile = () => {
             </div>
           </div>
           {/* Chart Section */}
-          <div className="md:w-2/3">
+          <div className="w-2/3">
             <div className="chart mb-6">
               <canvas ref={chartRef} width={800} height={400}></canvas>
             </div>
             {/* Tabs to switch between charts */}
-            <div className="flex flex-wrap justify-center mt-4">
-              {rowsOfButtons.map((row, rowIndex) => (
-                <div key={rowIndex} className="flex space-x-4">
-                  {row.map((chartData, index) => (
-                    <button
-                      key={index}
-                      className={`py-2 px-4 rounded-md ${
-                        activeTab === chartData.index
-                          ? "bg-blue-300 text-blue-1000"
-                          : "bg-blue-100 text-blue-1000 hover:bg-blue-200 hover:text-blue-800"
-                      }`}
-                      onClick={() => setActiveTab(chartData.index)}
-                    >
-                      {chartData.label}
-                    </button>
-                  ))}
-                </div>
+            <div className="grid grid-cols-4 gap-2 mt-4">
+              {chartDataArray.map((chartData, index) => (
+                <button
+                  key={index}
+                  className={`py-2 px-6 rounded-md center-align items-center text-center ${
+                    activeTab === index
+                      ? "bg-blue-300 text-blue-1000"
+                      : "bg-blue-100 text-blue-1000 hover:bg-blue-200 hover:text-blue-800"
+                  }`}
+                  onClick={() => setActiveTab(index)}
+                >
+                  {chartData.label}
+                </button>
               ))}
             </div>
           </div>
