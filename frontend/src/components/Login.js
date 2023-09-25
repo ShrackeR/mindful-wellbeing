@@ -16,6 +16,11 @@ function Login() {
 
   const [isPageLoaded, setPageLoaded] = useState(false);
 
+  function signUpSuccess() {
+    localStorage.setItem("token", "123");
+    console.log("This is a function without parameters.");
+  }
+
   useEffect(() => {
     // Set a delay of 100ms to show the page content after the fade-in effect
     setTimeout(() => {
@@ -25,7 +30,7 @@ function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    navigate("/");
     const formData = new FormData();
     formData.append("email", email);
     formData.append("passwd", password);
@@ -107,6 +112,7 @@ function Login() {
             </div>
 
             <button
+              onClick={signUpSuccess}
               type="submit"
               className="w-full bg-pink-violent text-white font-semibold py-2 rounded-full hover:bg-purple-700 focus:outline-none focus:ring focus:ring-purple-500 focus:ring-opacity-50"
             >

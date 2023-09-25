@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import { Chart } from "chart.js/auto";
+import Navigation from "../components/Navigation";
 
 const Profile = () => {
   // Hardcoded data for multiple Line Charts
@@ -124,31 +125,67 @@ const Profile = () => {
     }
   }, [activeTab]);
 
+  // Assuming chartDataArray contains your chart data
+  const rowsOfButtons = [];
+  for (let i = 0; i < chartDataArray.length; i += 4) {
+    const row = chartDataArray.slice(i, i + 4);
+    rowsOfButtons.push(row);
+  }
+
   return (
-    <div className="container mx-auto mt-6">
-      <div className="chart mb-6">
-        <canvas ref={chartRef} width={800} height={400}></canvas>
+    <>
+      <Navigation />
+      <div className="container mx-auto mt-6">
+        <div className="flex flex-col md:flex-row">
+          {/* Profile Section */}
+          <div className="md:w-1/3 text-left mb-4">
+            <h2 className="text-2xl font-semibold mb-4">Profile</h2>
+            <div className="mb-2">
+              <strong>Name:</strong> Dev
+            </div>
+            <div className="mb-2">
+              <strong>Age:</strong> 20
+            </div>
+            <div className="mb-2">
+              <strong>State:</strong> Maharashtra
+            </div>
+            <div className="mb-2">
+              <strong>Gender:</strong> Male
+            </div>
+            <div className="mb-2">
+              <strong>Email:</strong> devbbhuva@gmail.com
+            </div>
+          </div>
+          {/* Chart Section */}
+          <div className="md:w-2/3">
+            <div className="chart mb-6">
+              <canvas ref={chartRef} width={800} height={400}></canvas>
+            </div>
+            {/* Tabs to switch between charts */}
+            <div className="flex flex-wrap justify-center mt-4">
+              {rowsOfButtons.map((row, rowIndex) => (
+                <div key={rowIndex} className="flex space-x-4">
+                  {row.map((chartData, index) => (
+                    <button
+                      key={index}
+                      className={`py-2 px-4 rounded-md ${
+                        activeTab === chartData.index
+                          ? "bg-blue-300 text-blue-1000"
+                          : "bg-blue-100 text-blue-1000 hover:bg-blue-200 hover:text-blue-800"
+                      }`}
+                      onClick={() => setActiveTab(chartData.index)}
+                    >
+                      {chartData.label}
+                    </button>
+                  ))}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
-      {/* Tabs to switch between charts */}
-      <div className="flex justify-center mt-4 space-x-4">
-        {chartDataArray.map((chartData, index) => (
-          <button
-            key={index}
-            className={`py-2 px-4 rounded-md mt-4 ${
-              activeTab === index
-                ? "bg-blue-300 text-blue-1000"
-                : "bg-blue-100 text-blue-1000 hover:bg-blue-200 hover:text-blue-800"
-            }`}
-            onClick={() => setActiveTab(index)}
-          >
-            {chartData.label}
-          </button>
-        ))}
-      </div>
-    </div>
+    </>
   );
-  
-  
 };
 
 export default Profile;
