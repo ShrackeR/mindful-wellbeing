@@ -1,5 +1,7 @@
 import { useState } from "react";
 // import "./Quiz.css";
+import { useUser } from "../context/UserContext"; // Import the useUser hook
+
 import Navigation from "../components/Navigation";
 import home from "../assets/bg.jpg";
 import { Link } from "react-router-dom";
@@ -350,6 +352,67 @@ const Quiz = () => {
   const { questions } = quiz;
   const { question, choices } = questions[activeQuestion];
 
+  // const onClickNext = () => {
+  //   setSelectedAnswerIndex(null);
+
+  //   if (activeQuestion !== questions.length - 1) {
+  //     setActiveQuestion((prev) => prev + 1);
+  //   } else {
+  //     setActiveQuestion(0);
+  //     setShowResult(true);
+
+  //     // Send a POST request to "/mental" with userResponses
+  //     const userResponsesString = userResponses.join(",");
+  //     fetch("https://sih.shreeraj.me/mental", {
+  //       method: "POST",
+  //       body: userResponsesString,
+  //     })
+  //       // .then((response) => {
+  //       //   // Handle the response as needed
+  //       // })
+  //       .then((response) => response.json()) // Assuming the response is JSON
+  //       .then((data) => {
+  //         setPostResponse(data); // Store the response data
+  //       })
+  //       .catch((error) => {
+  //         console.error("Error sending POST request:", error);
+  //       });
+  //   }
+  // };
+
+  // const onClickNext = () => {
+  //   setSelectedAnswerIndex(null);
+
+  //   if (activeQuestion !== questions.length - 1) {
+  //     setActiveQuestion((prev) => prev + 1);
+  //   } else {
+  //     setActiveQuestion(0);
+  //     setShowResult(true);
+
+  //     // Create a new FormData object
+  //     const formData = new FormData();
+
+  //     // Add the user responses as individual fields in the FormData
+  //     userResponses.forEach((response, index) => {
+  //       formData.append(`response_${index + 1}`, response);
+  //     });
+
+  //     // Send a POST request to "/mental" with FormData
+  //     fetch("https://sih.shreeraj.me/mental", {
+  //       method: "POST",
+  //       body: formData,
+  //     })
+  //       .then((response) => response.json()) // Assuming the response is JSON
+  //       .then((data) => {
+  //         setPostResponse(data); // Store the response data
+  //       })
+  //       .catch((error) => {
+  //         console.error("Error sending POST request:", error);
+  //       });
+  //   }
+  // };
+  const { userEmail } = useUser(); // Get the userEmail from the context
+
   const onClickNext = () => {
     setSelectedAnswerIndex(null);
 
@@ -359,15 +422,28 @@ const Quiz = () => {
       setActiveQuestion(0);
       setShowResult(true);
 
-      // Send a POST request to "/mental" with userResponses
+      // Create a new FormData object
+      const formData = new FormData();
+
+      // Convert the user responses array to a comma-separated string
       const userResponsesString = userResponses.join(",");
-      fetch("/mental", {
+      // console.log(userResponsesString);
+
+      // Append the comma-separated string as a field in the FormData
+      formData.append("userResponses", userResponsesString);
+
+      // Use the userEmail from the context and add it to the FormData
+      formData.append("email", userEmail);
+      // Use the get method to retrieve the values
+      console.log(formData.get("email")); // This will log the email
+      console.log(formData.get("userResponses")); // This will log the userResponses
+
+      // Send a POST request to "/mental" with FormData
+      fetch("https://sih.shreeraj.me/mental", {
+        mode: "no-cors",
         method: "POST",
-        body: userResponsesString,
+        body: formData,
       })
-        // .then((response) => {
-        //   // Handle the response as needed
-        // })
         .then((response) => response.json()) // Assuming the response is JSON
         .then((data) => {
           setPostResponse(data); // Store the response data
