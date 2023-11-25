@@ -217,6 +217,82 @@ const State = () => {
         },
       ]);
       setActiveChart("Female");
+    } else if (chartType === "All") {
+      setChartData([
+        // Female chart data
+        {
+          label: "Stress (Female)",
+          data: [85, 72, 91, 78, 89, 95, 88, 92, 79, 84, 90],
+          fill: "origin",
+          backgroundColor: "rgba(0, 123, 255, 0.2)", // Blue color for males
+          borderColor: "rgba(0, 123, 255, 1)",
+          borderWidth: 3,
+        },
+        {
+          label: "Anxiety (Female)",
+          data: [75, 23, 100, 7, 81, 95, 88, 92, 79, 84, 90],
+          fill: "origin",
+          backgroundColor: "rgba(255, 99, 132, 0.2)",
+          borderColor: "rgba(255, 99, 132, 1)",
+          borderWidth: 3,
+          hidden: true,
+        },
+        {
+          label: "OCD (Female)",
+          data: [8, 27, 44, 78, 80, 95, 100, 92, 7, 84, 90],
+          fill: "origin",
+          backgroundColor: "rgba(255, 159, 64, 0.2)", // Orange color for males
+          borderColor: "rgba(255, 159, 64, 1)",
+          borderWidth: 3,
+          hidden: true,
+        },
+        {
+          label: "Depression (Female)",
+          data: [75, 2, 100, 56, 81, 95, 88, 45, 79, 84, 90],
+          fill: "origin",
+          backgroundColor: "rgba(153, 102, 255, 0.2)", // Purple color for males
+          borderColor: "rgba(153, 102, 255, 1)",
+          borderWidth: 3,
+          hidden: true,
+        },
+        {
+          label: "Phobic Anxiety (Female)",
+          data: [23, 72, 45, 50, 50, 95, 88, 92, 69, 84, 90],
+          fill: "origin",
+          backgroundColor: "rgba(255, 206, 86, 0.2)", // Yellow color for males
+          borderColor: "rgba(255, 206, 86, 1)",
+          borderWidth: 3,
+          hidden: true,
+        },
+        {
+          label: "Paranoid Ideation (Female)",
+          data: [78, 23, 24, 7, 81, 9, 88, 92, 79, 84, 90],
+          fill: "origin",
+          backgroundColor: "rgba(75, 192, 192, 0.2)", // Teal color for males
+          borderColor: "rgba(75, 192, 192, 1)",
+          borderWidth: 3,
+          hidden: true,
+        },
+        {
+          label: "Interpersonal Sensitivity (Female)",
+          data: [85, 72, 91, 78, 89, 95, 88, 92, 79, 84, 90],
+          fill: "origin",
+          backgroundColor: "rgba(255, 99, 132, 0.2)",
+          borderColor: "rgba(255, 99, 132, 1)",
+          borderWidth: 3,
+          hidden: true,
+        },
+        {
+          label: "Psychoticism (Female)",
+          data: [75, 23, 100, 7, 81, 95, 88, 92, 79, 84, 90],
+          fill: "origin",
+          backgroundColor: "rgba(255, 99, 132, 0.2)",
+          borderColor: "rgba(255, 99, 132, 1)",
+          borderWidth: 3,
+          hidden: true,
+        },
+      ]);
+      setActiveChart("All");
     } else if (chartType === "Zero") {
       setChartData([
         // Zero chart data
@@ -663,6 +739,16 @@ const State = () => {
         <div className="container mx-auto mt-6">
           <div className="flex justify-center space-x-4 mb-4">
             <h2>Gender:</h2>
+            <button
+              className={`py-2 px-4 rounded-md ${
+                activeChart === "Male"
+                  ? "bg-green-300 text-blue-1000"
+                  : "bg-blue-300 text-gray-700"
+              }`}
+              onClick={() => handleChartSwitch("All")}
+            >
+              All
+            </button>
             <button
               className={`py-2 px-4 rounded-md ${
                 activeChart === "Male"
