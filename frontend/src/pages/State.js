@@ -1,3 +1,5 @@
+
+
 import React, { useEffect, useState, useRef } from "react";
 import { Chart } from "chart.js/auto";
 import Navigation from "../components/Navigation";
