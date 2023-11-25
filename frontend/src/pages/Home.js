@@ -21,6 +21,10 @@ function Home() {
     // Use window.location to navigate to "/quiz"
     window.location.href = "/quiz";
   };
+  const isUserAuthenticated = () => {
+    const token = localStorage.getItem("token");
+    return !!token; // Convert to a boolean
+  };
 
   return (
     <div>
@@ -71,12 +75,35 @@ function Home() {
                     positive thoughts, your life will start to change."
                   </p>
                   <div className="text-center">
-                    <button
+                  {isUserAuthenticated() ? ( // Check if the user is authenticated
+          <>
+            <Link
+              to="/quiz"
+              ><button
+              className="bg-blue-500 text-white px-4 py-2 rounded-full hover:bg-blue-600 mx-auto"
+            >
+              Start the Test
+            </button>
+            </Link>
+          </>
+        ) : (
+          <>
+            <Link
+              to="/login"
+              ><button
+              className="bg-blue-500 text-white px-4 py-2 rounded-full hover:bg-blue-600 mx-auto"
+            >
+              Start the Test
+            </button>
+            </Link>
+          </>
+        )}
+                    {/* <button
                       className="bg-blue-500 text-white px-4 py-2 rounded-full hover:bg-blue-600 mx-auto"
                       onClick={handleStartTestClick}
                     >
                       Start the Test
-                    </button>
+                    </button> */}
                   </div>
                 </div>
               </div>

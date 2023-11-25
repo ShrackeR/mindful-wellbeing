@@ -1,5 +1,6 @@
 import React from "react";
 import Navigation from "../components/Navigation";
+import { Link } from "react-router-dom";
 
 function AnxietyRemediesPage() {
   return (
@@ -61,7 +62,7 @@ function AnxietyRemediesPage() {
             </div>
           </section>
 
-          <section className="mb-8">
+          {/* <section className="mb-8">
             <div className="bg-white p-6 rounded-lg shadow-lg">
               <h2 className="text-2xl font-semibold mb-2">Regular Exercise</h2>
               <p>
@@ -70,7 +71,7 @@ function AnxietyRemediesPage() {
                 boost your mood and improve overall mental health.
               </p>
             </div>
-          </section>
+          </section> */}
 
           <section className="mb-8">
             <div className="bg-white p-6 rounded-lg shadow-lg">
@@ -114,6 +115,11 @@ function AnxietyRemediesPage() {
                   Explore relaxation techniques such as progressive muscle
                   relaxation or guided imagery to ease anxiety and stress.
                 </p>
+                <Link to="/api"><button
+              className="bg-blue-500 text-white px-4 py-2 rounded-full hover:bg-blue-600 mx-auto"
+            >
+              Explore
+            </button></Link>
               </div>
             </div>
           </section>

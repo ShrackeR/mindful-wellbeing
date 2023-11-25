@@ -146,7 +146,7 @@ const Profile = () => {
               <strong>Gender:</strong> Male
             </div>
             <div className="mb-2">
-              <strong>Email:</strong> devbbhuva@gmail.com
+              <strong>Email:</strong> dev123@gmail.com
             </div>
           </div>
           {/* Chart Section */}

@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom"; // Import useHistory
 import Navigation from "./Navigation.js";
 import Footer from "./Footer.js";
 import "./SignUp.css";
-import { useUser } from "../context/UserContext"; // Import the useUser hook
+import { useNavigate } from "react-router-dom";
 
 function SignUp() {
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -28,7 +29,7 @@ function SignUp() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     const formData = new FormData();
     formData.append("name", name);
     formData.append("email", email);
@@ -36,31 +37,31 @@ function SignUp() {
     formData.append("gender", gender);
     formData.append("state", state);
     formData.append("passwd", password);
-
+  
+    try {
     const response = await fetch("https://sih.shreeraj.me/register", {
-      mode: "no-cors",
+      mode: 'cors',
       method: "POST",
       body: formData,
     });
-
+  
     if (!response.ok) {
       setError("An error occurred during registration.");
+      return;
+    } 
+    const jsonResponse = await response.json();
+  
+    if (jsonResponse.success === true) {
+      navigate('/'); // Navigate to the desired location if success is true
+      console.log('Login successful');
     } else {
-      setError(null);
-      setName("");
-      setAge("");
-      setEmail("");
-      setPassword("");
-      setConfirmPassword("");
-      setState("");
-      setGender("");
-      setMessage("Registration successful!");
-
-      // Convert the response body to text and log it
-      const responseBody = await response.text();
-      console.log("Response Body:", responseBody);
+      setError("Login failed. Please check your credentials.");
+      console.log("Wrong")
     }
-  };
+  }catch (error) {
+    console.error('An error occurred:', error);
+  }
+  }; // Removed the extra closing curly brace
 
   return (
     <>

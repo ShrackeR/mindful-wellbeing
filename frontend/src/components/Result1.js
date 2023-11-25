@@ -15,7 +15,7 @@ const Result1 = () => {
       trait: "Somatization",
       explanation:
         "Somatization refers to the tendency to experience and express emotional distress through physical symptoms, such as headaches or stomachaches.",
-      remedyLink: "/somatization",
+      remedyLink: "/stress",
     },
     C: {
       trait: "Obsessive Compulsive Disorder",

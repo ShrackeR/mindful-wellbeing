@@ -1668,7 +1668,7 @@ const State = () => {
       setChartData([
         // Female chart data
         {
-          label: "Stress (Male)",
+          label: "Stress (Female)",
           data: [85, 72, 91, 78, 89, 95, 88, 92, 79, 84, 90],
           fill: "origin",
           backgroundColor: "rgba(0, 123, 255, 0.2)", // Blue color for males
@@ -1676,7 +1676,7 @@ const State = () => {
           borderWidth: 3,
         },
         {
-          label: "Anxiety (Male)",
+          label: "Anxiety (Female)",
           data: [75, 23, 100, 7, 81, 95, 88, 92, 79, 84, 90],
           fill: "origin",
           backgroundColor: "rgba(255, 99, 132, 0.2)",
@@ -1685,7 +1685,7 @@ const State = () => {
           hidden: true,
         },
         {
-          label: "OCD (Male)",
+          label: "OCD (Female)",
           data: [8, 27, 44, 78, 80, 95, 100, 92, 7, 84, 90],
           fill: "origin",
           backgroundColor: "rgba(255, 159, 64, 0.2)", // Orange color for males
@@ -1694,7 +1694,7 @@ const State = () => {
           hidden: true,
         },
         {
-          label: "Depression (Male)",
+          label: "Depression (Female)",
           data: [75, 2, 100, 56, 81, 95, 88, 45, 79, 84, 90],
           fill: "origin",
           backgroundColor: "rgba(153, 102, 255, 0.2)", // Purple color for males
@@ -1703,7 +1703,7 @@ const State = () => {
           hidden: true,
         },
         {
-          label: "Phobic Anxiety (Male)",
+          label: "Phobic Anxiety (Female)",
           data: [23, 72, 45, 50, 50, 95, 88, 92, 69, 84, 90],
           fill: "origin",
           backgroundColor: "rgba(255, 206, 86, 0.2)", // Yellow color for males
@@ -1712,7 +1712,7 @@ const State = () => {
           hidden: true,
         },
         {
-          label: "Paranoid Ideation (Male)",
+          label: "Paranoid Ideation (Female)",
           data: [78, 23, 24, 7, 81, 9, 88, 92, 79, 84, 90],
           fill: "origin",
           backgroundColor: "rgba(75, 192, 192, 0.2)", // Teal color for males
@@ -1721,7 +1721,7 @@ const State = () => {
           hidden: true,
         },
         {
-          label: "Interpersonal Sensitivity (Male)",
+          label: "Interpersonal Sensitivity (Female)",
           data: [85, 72, 91, 78, 89, 95, 88, 92, 79, 84, 90],
           fill: "origin",
           backgroundColor: "rgba(255, 99, 132, 0.2)",
@@ -1730,7 +1730,7 @@ const State = () => {
           hidden: true,
         },
         {
-          label: "Psychoticism (Male)",
+          label: "Psychoticism (Female)",
           data: [75, 23, 100, 7, 81, 95, 88, 92, 79, 84, 90],
           fill: "origin",
           backgroundColor: "rgba(255, 99, 132, 0.2)",
@@ -1744,7 +1744,7 @@ const State = () => {
       setChartData([
         // Zero chart data
         {
-          label: "Stress (Male)",
+          label: "Stress (0-20)",
           data: [85, 72, 91, 78, 89, 95, 88, 92, 79, 84, 90],
           fill: "origin",
           backgroundColor: "rgba(0, 123, 255, 0.2)", // Blue color for males
@@ -1752,7 +1752,7 @@ const State = () => {
           borderWidth: 3,
         },
         {
-          label: "Anxiety (Male)",
+          label: "Anxiety (0-20)",
           data: [75, 23, 100, 7, 81, 95, 88, 92, 79, 84, 90],
           fill: "origin",
           backgroundColor: "rgba(255, 99, 132, 0.2)",
@@ -1761,7 +1761,7 @@ const State = () => {
           hidden: true,
         },
         {
-          label: "OCD (Male)",
+          label: "OCD (0-20)",
           data: [8, 27, 44, 78, 80, 95, 100, 92, 7, 84, 90],
           fill: "origin",
           backgroundColor: "rgba(255, 159, 64, 0.2)", // Orange color for males
@@ -1770,7 +1770,7 @@ const State = () => {
           hidden: true,
         },
         {
-          label: "Depression (Male)",
+          label: "Depression (0-20)",
           data: [75, 2, 100, 56, 81, 95, 88, 45, 79, 84, 90],
           fill: "origin",
           backgroundColor: "rgba(153, 102, 255, 0.2)", // Purple color for males
@@ -1779,7 +1779,7 @@ const State = () => {
           hidden: true,
         },
         {
-          label: "Phobic Anxiety (Male)",
+          label: "Phobic Anxiety (0-20)",
           data: [23, 72, 45, 50, 50, 95, 88, 92, 69, 84, 90],
           fill: "origin",
           backgroundColor: "rgba(255, 206, 86, 0.2)", // Yellow color for males
@@ -1788,7 +1788,7 @@ const State = () => {
           hidden: true,
         },
         {
-          label: "Paranoid Ideation (Male)",
+          label: "Paranoid Ideation (0-20)",
           data: [78, 23, 24, 7, 81, 9, 88, 92, 79, 84, 90],
           fill: "origin",
           backgroundColor: "rgba(75, 192, 192, 0.2)", // Teal color for males
@@ -1797,7 +1797,7 @@ const State = () => {
           hidden: true,
         },
         {
-          label: "Interpersonal Sensitivity (Male)",
+          label: "Interpersonal Sensitivity (0-20)",
           data: [85, 72, 91, 78, 89, 95, 88, 92, 79, 84, 90],
           fill: "origin",
           backgroundColor: "rgba(255, 99, 132, 0.2)",
@@ -1806,7 +1806,7 @@ const State = () => {
           hidden: true,
         },
         {
-          label: "Psychoticism (Male)",
+          label: "Psychoticism (0-20)",
           data: [75, 23, 100, 7, 81, 95, 88, 92, 79, 84, 90],
           fill: "origin",
           backgroundColor: "rgba(255, 99, 132, 0.2)",
@@ -1820,7 +1820,7 @@ const State = () => {
       setChartData([
         // Twenty chart data
         {
-          label: "Stress (Male)",
+          label: "Stress (20-40)",
           data: [85, 72, 91, 78, 89, 95, 88, 92, 79, 84, 90],
           fill: "origin",
           backgroundColor: "rgba(0, 123, 255, 0.2)", // Blue color for males
@@ -1828,7 +1828,7 @@ const State = () => {
           borderWidth: 3,
         },
         {
-          label: "Anxiety (Male)",
+          label: "Anxiety (20-40)",
           data: [75, 23, 100, 7, 81, 95, 88, 92, 79, 84, 90],
           fill: "origin",
           backgroundColor: "rgba(255, 99, 132, 0.2)",
@@ -1837,7 +1837,7 @@ const State = () => {
           hidden: true,
         },
         {
-          label: "OCD (Male)",
+          label: "OCD (20-40)",
           data: [8, 27, 44, 78, 80, 95, 100, 92, 7, 84, 90],
           fill: "origin",
           backgroundColor: "rgba(255, 159, 64, 0.2)", // Orange color for males
@@ -1846,7 +1846,7 @@ const State = () => {
           hidden: true,
         },
         {
-          label: "Depression (Male)",
+          label: "Depression (20-40)",
           data: [75, 2, 100, 56, 81, 95, 88, 45, 79, 84, 90],
           fill: "origin",
           backgroundColor: "rgba(153, 102, 255, 0.2)", // Purple color for males
@@ -1855,7 +1855,7 @@ const State = () => {
           hidden: true,
         },
         {
-          label: "Phobic Anxiety (Male)",
+          label: "Phobic Anxiety (20-40)",
           data: [23, 72, 45, 50, 50, 95, 88, 92, 69, 84, 90],
           fill: "origin",
           backgroundColor: "rgba(255, 206, 86, 0.2)", // Yellow color for males
@@ -1864,7 +1864,7 @@ const State = () => {
           hidden: true,
         },
         {
-          label: "Paranoid Ideation (Male)",
+          label: "Paranoid Ideation (20-40)",
           data: [78, 23, 24, 7, 81, 9, 88, 92, 79, 84, 90],
           fill: "origin",
           backgroundColor: "rgba(75, 192, 192, 0.2)", // Teal color for males
@@ -1873,7 +1873,7 @@ const State = () => {
           hidden: true,
         },
         {
-          label: "Interpersonal Sensitivity (Male)",
+          label: "Interpersonal Sensitivity (20-40)",
           data: [85, 72, 91, 78, 89, 95, 88, 92, 79, 84, 90],
           fill: "origin",
           backgroundColor: "rgba(255, 99, 132, 0.2)",
@@ -1882,7 +1882,7 @@ const State = () => {
           hidden: true,
         },
         {
-          label: "Psychoticism (Male)",
+          label: "Psychoticism (20-40)",
           data: [75, 23, 100, 7, 81, 95, 88, 92, 79, 84, 90],
           fill: "origin",
           backgroundColor: "rgba(255, 99, 132, 0.2)",
@@ -1896,7 +1896,7 @@ const State = () => {
       setChartData([
         // Forty chart data
         {
-          label: "Stress (Male)",
+          label: "Stress (40-60)",
           data: [85, 72, 91, 78, 89, 95, 88, 92, 79, 84, 90],
           fill: "origin",
           backgroundColor: "rgba(0, 123, 255, 0.2)", // Blue color for males
@@ -1904,7 +1904,7 @@ const State = () => {
           borderWidth: 3,
         },
         {
-          label: "Anxiety (Male)",
+          label: "Anxiety (40-60)",
           data: [75, 23, 100, 7, 81, 95, 88, 92, 79, 84, 90],
           fill: "origin",
           backgroundColor: "rgba(255, 99, 132, 0.2)",
@@ -1913,7 +1913,7 @@ const State = () => {
           hidden: true,
         },
         {
-          label: "OCD (Male)",
+          label: "OCD (40-60)",
           data: [8, 27, 44, 78, 80, 95, 100, 92, 7, 84, 90],
           fill: "origin",
           backgroundColor: "rgba(255, 159, 64, 0.2)", // Orange color for males
@@ -1922,7 +1922,7 @@ const State = () => {
           hidden: true,
         },
         {
-          label: "Depression (Male)",
+          label: "Depression (40-60)",
           data: [75, 2, 100, 56, 81, 95, 88, 45, 79, 84, 90],
           fill: "origin",
           backgroundColor: "rgba(153, 102, 255, 0.2)", // Purple color for males
@@ -1931,7 +1931,7 @@ const State = () => {
           hidden: true,
         },
         {
-          label: "Phobic Anxiety (Male)",
+          label: "Phobic Anxiety (40-60)",
           data: [23, 72, 45, 50, 50, 95, 88, 92, 69, 84, 90],
           fill: "origin",
           backgroundColor: "rgba(255, 206, 86, 0.2)", // Yellow color for males
@@ -1940,7 +1940,7 @@ const State = () => {
           hidden: true,
         },
         {
-          label: "Paranoid Ideation (Male)",
+          label: "Paranoid Ideation (40-60)",
           data: [78, 23, 24, 7, 81, 9, 88, 92, 79, 84, 90],
           fill: "origin",
           backgroundColor: "rgba(75, 192, 192, 0.2)", // Teal color for males
@@ -1949,7 +1949,7 @@ const State = () => {
           hidden: true,
         },
         {
-          label: "Interpersonal Sensitivity (Male)",
+          label: "Interpersonal Sensitivity (40-60)",
           data: [85, 72, 91, 78, 89, 95, 88, 92, 79, 84, 90],
           fill: "origin",
           backgroundColor: "rgba(255, 99, 132, 0.2)",
@@ -1958,7 +1958,7 @@ const State = () => {
           hidden: true,
         },
         {
-          label: "Psychoticism (Male)",
+          label: "Psychoticism (40-60)",
           data: [75, 23, 100, 7, 81, 95, 88, 92, 79, 84, 90],
           fill: "origin",
           backgroundColor: "rgba(255, 99, 132, 0.2)",
@@ -1972,7 +1972,7 @@ const State = () => {
       setChartData([
         // Sixty chart data
         {
-          label: "Stress (Male)",
+          label: "Stress (60-80)",
           data: [85, 72, 91, 78, 89, 95, 88, 92, 79, 84, 90],
           fill: "origin",
           backgroundColor: "rgba(0, 123, 255, 0.2)", // Blue color for males
@@ -1980,7 +1980,7 @@ const State = () => {
           borderWidth: 3,
         },
         {
-          label: "Anxiety (Male)",
+          label: "Anxiety (60-80)",
           data: [75, 23, 100, 7, 81, 95, 88, 92, 79, 84, 90],
           fill: "origin",
           backgroundColor: "rgba(255, 99, 132, 0.2)",
@@ -1989,7 +1989,7 @@ const State = () => {
           hidden: true,
         },
         {
-          label: "OCD (Male)",
+          label: "OCD (60-80)",
           data: [8, 27, 44, 78, 80, 95, 100, 92, 7, 84, 90],
           fill: "origin",
           backgroundColor: "rgba(255, 159, 64, 0.2)", // Orange color for males
@@ -1998,7 +1998,7 @@ const State = () => {
           hidden: true,
         },
         {
-          label: "Depression (Male)",
+          label: "Depression (60-80)",
           data: [75, 2, 100, 56, 81, 95, 88, 45, 79, 84, 90],
           fill: "origin",
           backgroundColor: "rgba(153, 102, 255, 0.2)", // Purple color for males
@@ -2007,7 +2007,7 @@ const State = () => {
           hidden: true,
         },
         {
-          label: "Phobic Anxiety (Male)",
+          label: "Phobic Anxiety (60-80)",
           data: [23, 72, 45, 50, 50, 95, 88, 92, 69, 84, 90],
           fill: "origin",
           backgroundColor: "rgba(255, 206, 86, 0.2)", // Yellow color for males
@@ -2016,7 +2016,7 @@ const State = () => {
           hidden: true,
         },
         {
-          label: "Paranoid Ideation (Male)",
+          label: "Paranoid Ideation (60-80)",
           data: [78, 23, 24, 7, 81, 9, 88, 92, 79, 84, 90],
           fill: "origin",
           backgroundColor: "rgba(75, 192, 192, 0.2)", // Teal color for males
@@ -2025,7 +2025,7 @@ const State = () => {
           hidden: true,
         },
         {
-          label: "Interpersonal Sensitivity (Male)",
+          label: "Interpersonal Sensitivity (60-80)",
           data: [85, 72, 91, 78, 89, 95, 88, 92, 79, 84, 90],
           fill: "origin",
           backgroundColor: "rgba(255, 99, 132, 0.2)",
@@ -2034,7 +2034,7 @@ const State = () => {
           hidden: true,
         },
         {
-          label: "Psychoticism (Male)",
+          label: "Psychoticism (60-80)",
           data: [75, 23, 100, 7, 81, 95, 88, 92, 79, 84, 90],
           fill: "origin",
           backgroundColor: "rgba(255, 99, 132, 0.2)",
@@ -2048,7 +2048,7 @@ const State = () => {
       setChartData([
         // Sixty chart data
         {
-          label: "Stress (Male)",
+          label: "Stress (80-100)",
           data: [85, 72, 91, 78, 89, 95, 88, 92, 79, 84, 90],
           fill: "origin",
           backgroundColor: "rgba(0, 123, 255, 0.2)", // Blue color for males
@@ -2056,7 +2056,7 @@ const State = () => {
           borderWidth: 3,
         },
         {
-          label: "Anxiety (Male)",
+          label: "Anxiety (80-100)",
           data: [75, 23, 100, 7, 81, 95, 88, 92, 79, 84, 90],
           fill: "origin",
           backgroundColor: "rgba(255, 99, 132, 0.2)",
@@ -2065,7 +2065,7 @@ const State = () => {
           hidden: true,
         },
         {
-          label: "OCD (Male)",
+          label: "OCD (80-100)",
           data: [8, 27, 44, 78, 80, 95, 100, 92, 7, 84, 90],
           fill: "origin",
           backgroundColor: "rgba(255, 159, 64, 0.2)", // Orange color for males
@@ -2074,7 +2074,7 @@ const State = () => {
           hidden: true,
         },
         {
-          label: "Depression (Male)",
+          label: "Depression (80-100)",
           data: [75, 2, 100, 56, 81, 95, 88, 45, 79, 84, 90],
           fill: "origin",
           backgroundColor: "rgba(153, 102, 255, 0.2)", // Purple color for males
@@ -2083,7 +2083,7 @@ const State = () => {
           hidden: true,
         },
         {
-          label: "Phobic Anxiety (Male)",
+          label: "Phobic Anxiety (80-100)",
           data: [23, 72, 45, 50, 50, 95, 88, 92, 69, 84, 90],
           fill: "origin",
           backgroundColor: "rgba(255, 206, 86, 0.2)", // Yellow color for males
@@ -2092,7 +2092,7 @@ const State = () => {
           hidden: true,
         },
         {
-          label: "Paranoid Ideation (Male)",
+          label: "Paranoid Ideation (80-100)",
           data: [78, 23, 24, 7, 81, 9, 88, 92, 79, 84, 90],
           fill: "origin",
           backgroundColor: "rgba(75, 192, 192, 0.2)", // Teal color for males
@@ -2101,7 +2101,7 @@ const State = () => {
           hidden: true,
         },
         {
-          label: "Interpersonal Sensitivity (Male)",
+          label: "Interpersonal Sensitivity (80-100)",
           data: [85, 72, 91, 78, 89, 95, 88, 92, 79, 84, 90],
           fill: "origin",
           backgroundColor: "rgba(255, 99, 132, 0.2)",
@@ -2110,7 +2110,7 @@ const State = () => {
           hidden: true,
         },
         {
-          label: "Psychoticism (Male)",
+          label: "Psychoticism (80-100)",
           data: [75, 23, 100, 7, 81, 95, 88, 92, 79, 84, 90],
           fill: "origin",
           backgroundColor: "rgba(255, 99, 132, 0.2)",
