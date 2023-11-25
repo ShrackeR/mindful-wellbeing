@@ -56,7 +56,7 @@ const ChartComponent = ({ data, label }) => {
   return (
     <div className="container mx-auto mt-6">
       <div className="chart mb-6">
-        <canvas ref={chartRef} width={800} height={400}></canvas>
+        <canvas ref={chartRef} width={600} height={400}></canvas>
       </div>
     </div>
   );
