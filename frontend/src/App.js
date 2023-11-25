@@ -22,6 +22,7 @@ import State from "./pages/State";
 import MapCharts from "./pages/MapCharts";
 import Result1 from "./components/Result1";
 import { UserProvider } from "../src/context/UserContext"; // Import the UserProvider
+import ChatBot from "./pages/Therapist";
 
 function App() {
   return (
@@ -43,6 +44,7 @@ function App() {
             <Route path="/stress" element={<StressRemediesPage />} />
             <Route path="/ocd" element={<OCDRemediesPage />} />
             <Route path="/phobic" element={<PhobicAnxietyRemediesPage />} />
+            <Route path="/chatbot" element={<ChatBot />} />
             <Route
               path="/paranoid"
               element={<ParanoidIdeationRemediesPage />}

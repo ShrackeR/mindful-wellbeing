@@ -75,6 +75,13 @@ const Result1 = () => {
         </div>
         <div className="w-2/3 p-4">
           <div className="p-2 rounded-lg shadow-md text-center">
+          <Link
+              to="/chatbot"
+              >
+            <button className="bg-blue-500 text-white py-2 px-4 rounded-full mb-4">
+              Talk to AI Therapist
+            </button>
+            </Link>
             <div className="grid grid-cols-2 gap-1 p-1">
               {Object.keys(traitsMapping).map((letter) => (
                 <div key={letter} className="border p-2">
@@ -97,5 +104,6 @@ const Result1 = () => {
     </>
   );
 };
+
 
 export default Result1;
