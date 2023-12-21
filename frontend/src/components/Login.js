@@ -17,7 +17,7 @@ function Login() {
   const [isPageLoaded, setPageLoaded] = useState(false);
 
   function signUpSuccess() {
-    localStorage.setItem("token", "123");
+    localStorage.setItem("token", email);
     console.log("This is a function without parameters.");
   }
 
@@ -30,13 +30,13 @@ function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    navigate("/");
+    // navigate("/");
     const formData = new FormData();
     formData.append("email", email);
     formData.append("passwd", password);
 
     try {
-      const response = await fetch("http://35.154.213.81/login", {
+      const response = await fetch("http://127.0.0.1/login", {
         mode: "cors",
         method: "POST",
         body: formData,
@@ -52,6 +52,7 @@ function Login() {
 
       if (jsonResponse.success === true) {
         setUserEmail(email); // Store the email in the context
+        signUpSuccess()
         navigate("/"); // Navigate to the desired location if success is true
         console.log("Login successful", userEmail);
       } else {
@@ -75,6 +76,7 @@ function Login() {
           <h1 className="text-4xl text-black font-bold mb-6 text-center align-center">
             Log In
           </h1>
+          <label style={{ color: "red" }}>{error}</label>
           <form className="space-y-6" onSubmit={handleSubmit}>
             <div className="space-y-1">
               <label
@@ -112,7 +114,7 @@ function Login() {
             </div>
 
             <button
-              onClick={signUpSuccess}
+              
               type="submit"
               className="w-full bg-pink-violent text-white font-semibold py-2 rounded-full hover:bg-purple-700 focus:outline-none focus:ring focus:ring-purple-500 focus:ring-opacity-50"
             >

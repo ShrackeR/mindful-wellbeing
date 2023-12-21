@@ -2,8 +2,11 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Navigation from "./Navigation.js";
 import Footer from "./Footer.js";
-import "./SignUp.css";
+  import { useNavigate } from "react-router-dom";
+  import "./SignUp.css";
 import { useUser } from "../context/UserContext"; // Import the useUser hook
+
+
 
 function SignUp() {
   const [email, setEmail] = useState("");
@@ -16,9 +19,9 @@ function SignUp() {
   const [error, setError] = useState(false);
   const [latestError, setLatestError] = useState("");
   const [message, setMessage] = useState("");
+  const navigate = useNavigate();
 
   const [isPageLoaded, setPageLoaded] = useState(false);
-
   useEffect(() => {
     // Set a delay of 100ms to show the page content after the fade-in effect
     setTimeout(() => {
@@ -37,8 +40,8 @@ function SignUp() {
     formData.append("state", state);
     formData.append("passwd", password);
 
-    const response = await fetch("https://sih.shreeraj.me/register", {
-      mode: "no-cors",
+    const response = await fetch("http://localhost/register", {
+      mode: "cors",
       method: "POST",
       body: formData,
     });
@@ -57,8 +60,15 @@ function SignUp() {
       setMessage("Registration successful!");
 
       // Convert the response body to text and log it
-      const responseBody = await response.text();
+      const responseBody = await response.json();
       console.log("Response Body:", responseBody);
+      if (responseBody.success==true){
+        localStorage.setItem("token", email);
+        navigate("/");
+      }
+      else{
+        setError("User already exists!")
+      }
     }
   };
 
@@ -74,6 +84,7 @@ function SignUp() {
           <h1 className="text-4xl text-black font-bold mb-6 text-center align-center">
             Sign Up
           </h1>
+          <label style={{ color: "red" }}>{error}</label>
           <form
             className="space-y-4 mt-4 max-w-md mx-auto"
             onSubmit={handleSubmit}

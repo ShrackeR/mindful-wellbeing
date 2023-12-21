@@ -373,21 +373,32 @@ const Quiz = () => {
       formData.append("mental_report", userResponsesString);
 
       // Use the userEmail from the context and add it to the FormData
-      formData.append("email", userEmail);
+      formData.append("email", localStorage.getItem("token"));
 
       // Use the get method to retrieve the values
       console.log(formData.get("email")); // This will log the email
       console.log(formData.get("mental_report")); // This will log the userResponses
 
       // Send a POST request to "/mental" with FormData
-      fetch("https://sih.shreeraj.me/mental", {
-        mode: "no-cors",
+      fetch("http://localhost:80/mental", {
+        mode: "cors",
         method: "POST",
         body: formData,
       })
-        .then((response) => response.json()) // Assuming the response is JSON
+        .then((response) => {
+          // console.log("POST Response Status:", response.status);
+          // console.log("POST Response Status Text:", response.statusText);
+          // console.log("POST Response Headers:", response.headers);
+          // console.log("POST Response text:", response.text());
+          // console.log("POST Response JSON:", response.json());
+          return response.json()
+        })
+           // Assuming the response is JSON
         .then((data) => {
-          setPostResponse(data); // Store the response data
+          console.log("POST Response:", data['mental_report'][0]);
+          // data=JSON.parse(data);
+          setPostResponse(data['mental_report'][0]); // Store the response data
+          localStorage.setItem("result", data['mental_report'][0]);
         })
         .catch((error) => {
           console.error("Error sending POST request:", error);

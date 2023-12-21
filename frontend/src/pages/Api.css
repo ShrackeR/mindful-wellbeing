@@ -1,148 +1,147 @@
 /* CSS for styling the cards */
 .exercise-cards {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-  
-  .exercise-card {
-    border: 1px solid #ddd;
-    padding: 20px;
-    border-radius: 5px;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 300px; /* Adjust the card width as needed */
-  }
-  
-  .exercise-card h4 {
-    margin: 0;
-    font-size: 1.2rem;
-  }
-  
-  .exercise-card p {
-    margin: 5px 0;
-  }
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
 
-  /* Api.css */
+.exercise-card {
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 300px; /* Adjust the card width as needed */
+}
+
+.exercise-card h4 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.exercise-card p {
+  margin: 5px 0;
+}
+
+/* Api.css */
 
 /* CSS for the specific page */
 .page-container {
-    font-family: Arial, sans-serif;
-    background-color: #9ecae5; /* Background color limited to this page */
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-  }
-  
-  /* Rest of your existing CSS styles */
-  /* ... */
-  
-  
-  .container {
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    width: 80%;
-    max-width: 800px;
-  }
-  
-  h2 {
-    color: #03045e;
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
-  .form-group {
-    margin-bottom: 20px;
-  }
-  
-  label {
-    color: #03045e;
-    font-weight: bold;
-    display: block;
-  }
-  
-  .form-control {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #03045e;
-    border-radius: 5px;
-    background-color: #f0f0f0;
-    color: #03045e;
-  }
-  
-  button[type="submit"] {
-    background-color: #03045e;
-    color: #ffffff;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  button[type="submit"]:hover {
-    background-color: #001f3f;
-  }
-  
-  .exercise-cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-  }
-  
-  .exercise-card {
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: left;
-    padding: 20px;
-    width: calc(50% - 20px);
-    margin-bottom: 20px;
-  }
-  
-  h4 {
-    color: #03045e;
-    font-size: 20px;
-    margin-bottom: 10px;
-  }
-  
-  strong {
-    font-weight: bold;
-  }
-  
-  .btn-secondary.active {
-    background-color: #e63946;
-  }
-  
-  
-  
-  .active .instructions {
-    display: block;
-    margin-top: 10px;
-  }
-  /* CSS for the "View Instructions" button */
+  font-family: Arial, sans-serif;
+  background-color: #9ecae5; /* Background color limited to this page */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Rest of your existing CSS styles */
+/* ... */
+
+
+.container {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 100%;
+  max-width: 1000px;
+}
+
+h2 {
+  color: #03045e;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  color: #03045e;
+  font-weight: bold;
+  display: block;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #03045e;
+  border-radius: 5px;
+  background-color: #f0f0f0;
+  color: #03045e;
+}
+
+button[type="submit"] {
+  background-color: #03045e;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+  background-color: #001f3f;
+}
+
+.exercise-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.exercise-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  padding: 20px;
+  width: calc(50% - 20px);
+  margin-bottom: 20px;
+}
+
+h4 {
+  color: #03045e;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+strong {
+  font-weight: bold;
+}
+
+.btn-secondary.active {
+  background-color: #e63946;
+}
+
+
+
+.active .instructions {
+  display: block;
+  margin-top: 10px;
+}
+/* CSS for the "View Instructions" button */
 .button-view-instructions {
-    background-color: #0074e4; /* Blue color */
-    color: #fff; /* White text */
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .button-view-instructions:hover {
-    background-color: #005cbf; /* Darker blue color on hover */
-  }
-  
-  
+  background-color: #0074e4; /* Blue color */
+  color: #fff; /* White text */
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.button-view-instructions:hover {
+  background-color: #005cbf; /* Darker blue color on hover */
+}
+

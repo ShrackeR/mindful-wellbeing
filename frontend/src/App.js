@@ -22,6 +22,9 @@ import State from "./pages/State";
 import MapCharts from "./pages/MapCharts";
 import Result1 from "./components/Result1";
 import { UserProvider } from "../src/context/UserContext"; // Import the UserProvider
+import ChatBot from "./pages/Therapist";
+import Analysis from "./pages/Analysis";
+
 
 function App() {
   return (
@@ -36,13 +39,15 @@ function App() {
             <Route path="/api" element={<Api />} />
             <Route path="/quiz" element={<Quiz />} />
             <Route path="/profile" element={<Profile />} />
-            <Route path="/india" element={<MapCharts />} />
+            <Route path="/india" element={<Analysis />} />
             <Route path="/remedies" element={<Remedies />} />
             <Route path="/depression" element={<DepressionRemediesPage />} />
             <Route path="/anxiety" element={<AnxietyRemediesPage />} />
             <Route path="/stress" element={<StressRemediesPage />} />
             <Route path="/ocd" element={<OCDRemediesPage />} />
             <Route path="/phobic" element={<PhobicAnxietyRemediesPage />} />
+            <Route path="/chatbot" element={<ChatBot />} />
+            <Route path="/analysis" element={<Analysis />} />
             <Route
               path="/paranoid"
               element={<ParanoidIdeationRemediesPage />}

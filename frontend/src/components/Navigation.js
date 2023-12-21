@@ -31,6 +31,12 @@ function Navigation() {
         >
           Remedies
         </Link>
+        <Link
+          to="/india"
+          className="text-black font-semibold hover:dark:bg-gray-900 hover:text-white rounded-lg px-4 py-2 animate-fadein"
+        >
+          Analysis
+        </Link>
         {isUserAuthenticated() ? ( // Check if the user is authenticated
           <>
             <Link

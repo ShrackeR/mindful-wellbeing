@@ -23,7 +23,12 @@ const ProgressBar = ({ percentage, className, index1 }) => {
 };
 
 function Result() {
-  let percentage = [35, 20, 45, 60, 75, 90, 15, 30, 55, 70];
+  let percentage = localStorage.getItem("result");//[35, 20, 45, 60, 75, 90, 15, 30, 55, 70];
+  percentage=percentage.split(",");
+  console.log(typeof(percentage));
+  console.log(percentage);
+  let overall = percentage[10];
+  percentage.splice(9,2);
   const characteristics = [
     "Overall",
     "Somatization",
@@ -44,7 +49,7 @@ function Result() {
         <div className="flex flex-col items-center mt-2 bg-blue-100 items-center lg-shadow justify-center h-[650px] w-[400px]">
           {/* Large progress bar at the top center */}
           <ProgressBar
-            percentage={percentage[0]}
+            percentage={overall}
             className="w-32 h-32 mt-2 mt-[-520px]"
             index1={index1[0]}
           />
